@@ -71,3 +71,14 @@ export const saladIcon = () => {
 </g>
 </svg>`;
 };
+
+export const arrowIcon = () => {
+  return `<svg xmlns="http://www.w3.org/2000/svg" class="arrowShadow"
+          width="100%"
+          height="100%"
+          viewBox="0 0 18 18">
+          <path
+              fill-rule="nonzero"
+              d="M8.152 12.644L4.956 7.53A1 1 0 0 1 5.804 6h6.391c.786 0 1.265.865.85 1.53l-3.198 5.114a1 1 0 0 1-1.695 0"/>
+  </svg>`;
+};

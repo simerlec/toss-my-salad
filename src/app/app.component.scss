@@ -4,10 +4,72 @@
   align-items: center;
 }
 
+.arrow {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  fill: #f8857e;
+}
+
+.arrow:hover {
+  fill: #e6665f;
+}
+
+.arrowUp {
+  transform: translateX(-50%) rotate(180deg);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+}
+.arrowDown {
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+.arrowLeft {
+  transform: rotate(90deg) translateY(-50%);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+}
+.arrowRight {
+  transform: rotate(-90deg) translateY(-50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.header {
+  background: linear-gradient(to left, #135825, #333);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  //   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  animation: headerIntro 1s;
+}
+
+@keyframes headerIntro {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .logo {
   width: 300px;
   height: 300px;
   cursor: pointer;
+}
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo-animation {
@@ -43,5 +105,42 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.northPanel {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  top: -30%;
+  box-shadow: 0px 4px 13px rgba(84, 84, 84, 0.3);
+  background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
+}
+
+.northPanel--show {
+  animation: showNorthPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showNorthPanel {
+  0% {
+    top: -30%;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.northPanel--hide {
+  animation: hideNorthPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideNorthPanel {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -30%;
   }
 }
