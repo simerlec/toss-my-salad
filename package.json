@@ -6,10 +6,9 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint",
-    "lint:staged": "lint-staged",
-    "prettier": "prettier --config .prettierrc --write \"{src,__{tests,mocks}__}/**/*.{ts,html}\"",
-    "e2e": "ng e2e"
+    "lint": "lint-staged",
+    "e2e": "ng e2e",
+    "prettier": "prettier --config .prettierrc --write --list-different \"{src,__{tests,mocks}__}/**/*.{js,ts,html,scss}\""
   },
   "private": true,
   "dependencies": {
