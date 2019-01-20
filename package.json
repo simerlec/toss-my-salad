@@ -60,6 +60,10 @@
     "*.html": [
       "npm run prettier",
       "git add"
+    ],
+    "*.scss": [
+      "npm run prettier",
+      "git add"
     ]
   },
   "husky": {
