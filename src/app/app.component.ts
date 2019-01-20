@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
   title = 'toss-my-salad';
   @ViewChild('logo') logoRef: ElementRef;
   @ViewChild('northPanel') northPanel: ElementRef;
+  @ViewChild('southPanel') southPanel: ElementRef;
+  @ViewChild('eastPanel') eastPanel: ElementRef;
+  @ViewChild('westPanel') westPanel: ElementRef;
   saladIcon: SafeHtml;
   arrowIcon: SafeHtml;
 
@@ -55,6 +58,54 @@ export class AppComponent implements OnInit {
         'northPanel--show',
       );
       this.renderer.addClass(this.northPanel.nativeElement, 'northPanel--hide');
+    }
+  }
+
+  toggleSouthPanel() {
+    if (!this.southPanel.nativeElement.classList.contains('southPanel--show')) {
+      this.renderer.removeClass(
+        this.southPanel.nativeElement,
+        'southPanel--hide',
+      );
+      this.renderer.addClass(this.southPanel.nativeElement, 'southPanel--show');
+    } else {
+      this.renderer.removeClass(
+        this.southPanel.nativeElement,
+        'southPanel--show',
+      );
+      this.renderer.addClass(this.southPanel.nativeElement, 'southPanel--hide');
+    }
+  }
+
+  toggleEastPanel() {
+    if (!this.eastPanel.nativeElement.classList.contains('eastPanel--show')) {
+      this.renderer.removeClass(
+        this.eastPanel.nativeElement,
+        'eastPanel--hide',
+      );
+      this.renderer.addClass(this.eastPanel.nativeElement, 'eastPanel--show');
+    } else {
+      this.renderer.removeClass(
+        this.eastPanel.nativeElement,
+        'eastPanel--show',
+      );
+      this.renderer.addClass(this.eastPanel.nativeElement, 'eastPanel--hide');
+    }
+  }
+
+  toggleWestPanel() {
+    if (!this.westPanel.nativeElement.classList.contains('westPanel--show')) {
+      this.renderer.removeClass(
+        this.westPanel.nativeElement,
+        'westPanel--hide',
+      );
+      this.renderer.addClass(this.westPanel.nativeElement, 'westPanel--show');
+    } else {
+      this.renderer.removeClass(
+        this.westPanel.nativeElement,
+        'westPanel--show',
+      );
+      this.renderer.addClass(this.westPanel.nativeElement, 'westPanel--hide');
     }
   }
 }

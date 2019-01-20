@@ -28,13 +28,13 @@
   left: 50%;
 }
 .arrowLeft {
-  transform: rotate(90deg) translateY(-50%);
+  transform: translateY(-50%) rotate(90deg);
   position: absolute;
   left: 10px;
   top: 50%;
 }
 .arrowRight {
-  transform: rotate(-90deg) translateY(-50%);
+  transform: translateY(-50%) rotate(-90deg);
   position: absolute;
   right: 10px;
   top: 50%;
@@ -108,13 +108,25 @@
   }
 }
 
+//NORTHPANEL
+
 .northPanel {
+  display: flex;
+  padding: 50px;
+  box-sizing: border-box;
   position: absolute;
+  overflow: hidden;
+  z-index: 2;
   width: 100%;
-  height: 30%;
-  top: -30%;
+  height: 0%;
+  top: -100%;
   box-shadow: 0px 4px 13px rgba(84, 84, 84, 0.3);
   background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
+}
+
+.northPanel > .arrowUp {
+  top: auto;
+  bottom: 10px;
 }
 
 .northPanel--show {
@@ -124,23 +136,177 @@
 
 @keyframes showNorthPanel {
   0% {
-    top: -30%;
+    top: -100%;
   }
   100% {
     top: 0;
+    height: 100%;
   }
 }
 
 .northPanel--hide {
-  animation: hideNorthPanel 0.5s;
+  animation: hideNorthPanel 1s;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
 @keyframes hideNorthPanel {
   0% {
     top: 0;
+    height: 100%;
   }
   100% {
-    top: -30%;
+    top: -100%;
+    height: 0%;
+  }
+}
+
+//SOUTHPANEL
+
+.southPanel {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  width: 100%;
+  height: 0%;
+  top: 0;
+  box-shadow: 0px 4px 13px rgba(84, 84, 84, 0.3);
+  background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
+}
+
+.southPanel > .arrowDown {
+  top: 10px;
+  bottom: auto;
+}
+
+.southPanel--show {
+  animation: showSouthPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showSouthPanel {
+  0% {
+    top: 100%;
+    height: 0%;
+  }
+  100% {
+    top: 0%;
+    height: 100%;
+  }
+}
+
+.southPanel--hide {
+  animation: hideSouthPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideSouthPanel {
+  0% {
+    top: 0vh;
+    height: 100vh;
+  }
+  100% {
+    top: 100vh;
+    height: 0vh;
+  }
+}
+
+//EASTHPANEL
+
+.eastPanel {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  width: 0%;
+  height: 100%;
+  left: 100%;
+  box-shadow: 0px 4px 13px rgba(84, 84, 84, 0.3);
+  background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
+}
+
+.eastPanel > .arrowRight {
+  right: auto;
+  left: 10px;
+}
+
+.eastPanel--show {
+  animation: showEastPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showEastPanel {
+  0% {
+    left: 100%;
+    width: 0%;
+  }
+  100% {
+    left: 0%;
+    width: 100%;
+  }
+}
+
+.eastPanel--hide {
+  animation: hideEastPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideEastPanel {
+  0% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+//WESTHPANEL
+
+.westPanel {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  width: 0%;
+  height: 100%;
+  right: 100%;
+  box-shadow: 0px 4px 13px rgba(84, 84, 84, 0.3);
+  background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
+}
+
+.westPanel--show {
+  animation: showWestPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.westPanel > .arrowLeft {
+  right: 10px;
+  left: auto;
+}
+
+@keyframes showWestPanel {
+  0% {
+    right: 100%;
+    width: 0%;
+  }
+  100% {
+    right: 0%;
+    width: 100%;
+  }
+}
+
+.westPanel--hide {
+  animation: hideWestPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideWestPanel {
+  0% {
+    right: 0%;
+    width: 100%;
+  }
+  100% {
+    right: 100%;
+    width: 0%;
   }
 }
