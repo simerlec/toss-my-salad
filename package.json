@@ -53,13 +53,8 @@
     "typescript": "~3.1.6"
   },
   "lint-staged": {
-    "*.ts": [
-      "npm run prettier",
-      "tslint --fix",
-      "git add"
-    ],
-    "*.html": [
-      "npm run prettier",
+    "*.{js,ts,json,css,scss,md}": [
+      "prettier --write",
       "git add"
     ]
   },
