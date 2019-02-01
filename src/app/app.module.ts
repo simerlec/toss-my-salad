@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NorthPanelComponent } from './views/north-panel/north-panel.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NorthPanelComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

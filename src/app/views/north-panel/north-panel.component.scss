@@ -1,0 +1,67 @@
+:host {
+  width: 100%;
+}
+
+.northPanel {
+  display: flex;
+  padding: 50px;
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  width: 100%;
+  height: 0%;
+  top: -100%;
+  box-shadow: 0px 4px 13px rgba(84, 84, 84, 0.3);
+  background: linear-gradient(to right bottom, #f7797d, #fbd786, #c6ffdd);
+}
+
+.arrow {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  fill: #f8857e;
+}
+
+.arrow:hover {
+  fill: #e6665f;
+}
+
+.arrowUp {
+  transform: translateX(-50%) rotate(180deg);
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+}
+
+.northPanel--show {
+  animation: showNorthPanel 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showNorthPanel {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+    height: 100%;
+  }
+}
+
+.northPanel--hide {
+  animation: hideNorthPanel 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideNorthPanel {
+  0% {
+    top: 0;
+    height: 100%;
+  }
+  100% {
+    top: -100%;
+    height: 0%;
+  }
+}

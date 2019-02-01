@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
   saladIcon: SafeHtml;
   arrowIcon: SafeHtml;
 
+  showNorthPanel = false;
+
   constructor(private sanitizer: DomSanitizer, private renderer: Renderer2) {}
 
   ngOnInit(): void {
@@ -46,19 +48,20 @@ export class AppComponent implements OnInit {
   }
 
   toggleNorthPanel() {
-    if (!this.northPanel.nativeElement.classList.contains('northPanel--show')) {
-      this.renderer.removeClass(
-        this.northPanel.nativeElement,
-        'northPanel--hide',
-      );
-      this.renderer.addClass(this.northPanel.nativeElement, 'northPanel--show');
-    } else {
-      this.renderer.removeClass(
-        this.northPanel.nativeElement,
-        'northPanel--show',
-      );
-      this.renderer.addClass(this.northPanel.nativeElement, 'northPanel--hide');
-    }
+    this.showNorthPanel = !this.showNorthPanel;
+    // if (!this.northPanel.nativeElement.classList.contains('northPanel--show')) {
+    //   this.renderer.removeClass(
+    //     this.northPanel.nativeElement,
+    //     'northPanel--hide',
+    //   );
+    //   this.renderer.addClass(this.northPanel.nativeElement, 'northPanel--show');
+    // } else {
+    //   this.renderer.removeClass(
+    //     this.northPanel.nativeElement,
+    //     'northPanel--show',
+    //   );
+    //   this.renderer.addClass(this.northPanel.nativeElement, 'northPanel--hide');
+    // }
   }
 
   toggleSouthPanel() {
